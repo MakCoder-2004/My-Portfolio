@@ -1,26 +1,81 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Railway:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Railway:wght@300&display=swap');
+
 @import "tailwindcss";
 
+/* Custom Theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* COLORS */
+  --color-bg-main: #0B0C10;         /* Background Dark */
+  --color-grid-line: #1F2937;       /* Grid lines */
+  --color-text-main: #FFFFFF;       /* Main text (White) */
+  --color-text-secondary: #94A3AF;  /* Secondary text (Silver-Blue) */
+  
+  --color-btn-primary: #A3E635;     /* Lime Green Button */
+  --color-btn-secondary: #818CF8;   /* Indigo Button */
+  --color-tag: #F472B6;             /* Pink Tag/Badge */
+  --color-icon: #22D3EE;            /* Aqua for Icons/Emojis */
+  --color-hover-glow: #67E8F9;      /* Bright Aqua for Hover Effects */
+  --color-divider: #2F343C;         /* Divider/Border Color */
+
+  /* FONTS */
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-primary: 'Railway', sans-serif;
+  --font-secondary: 'Railway', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Extend Tailwind's default theme */
+@layer base {
+  .bg-main {
+    background-color: var(--color-bg-main);
+  }
+  .grid-line {
+    color: var(--color-grid-line);
+  }
+  .text-main {
+    color: var(--color-text-main);
+  }
+  .text-secondary {
+    color: var(--color-text-secondary);
+  }
+  .btn-primary {
+    background-color: var(--color-btn-primary);
+  }
+  .btn-secondary {
+    background-color: var(--color-btn-secondary);
+  }
+  .tag-pink {
+    background-color: var(--color-tag);
+  }
+  .icon-aqua {
+    color: var(--color-icon);
+  }
+  .hover-glow {
+    box-shadow: 0 0 10px var(--color-hover-glow);
+  }
+  .divider {
+    border-color: var(--color-divider);
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Fonts */
+  .font-pixel {
+    font-family: var(--font-pixel);
+  }
+  .font-primary {
+    font-family: var(--font-primary);
+    font-weight: 700; /* Bold */
+  }
+  .font-secondary {
+    font-family: var(--font-secondary);
+    font-weight: 300; /* Light */
   }
 }
 
+/* body base styles */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+  font-family: var(--font-primary);
 }
