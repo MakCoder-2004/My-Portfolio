@@ -12,8 +12,10 @@ type Testimonial = {
 
 export const AnimatedTestimonial = ({
   testimonial,
+  otherClasses,
 }: {
   testimonial: Testimonial;
+  otherClasses?: string;
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -30,7 +32,7 @@ export const AnimatedTestimonial = ({
   return (
     <div
       ref={ref}
-      className="mx-auto px-4 py-8 font-sans antialiased md:max-w-6xl md:px-8 lg:px-8"
+      className={`mx-auto px-4 pb-6 font-sans antialiased md:max-w-6xl md:px-8 lg:px-8 ${otherClasses}`}
     >
       <div className="relative grid grid-cols-1 gap-10 md:grid-cols-2 items-center">
         <div className="flex justify-center sm:justify-center md:justify-center lg:justify-start">
@@ -62,14 +64,14 @@ export const AnimatedTestimonial = ({
                 alt="profile-image"
                 width={500}
                 height={500}
-                className="size-full object-cover object-center"
+                className="size-full object-cover rounded-4xl object-center"
                 priority
                 sizes="(max-width: 800px) 20rem, (max-width: 800x) 24rem, 30rem"
               />
             </motion.div>
           </div>
         </div>
-        <div className="flex flex-col justify-between py-4">
+        <div className="flex flex-col justify-between pt-4">
           <motion.div
             variants={{
               hidden: { y: 20, opacity: 0 },
@@ -82,7 +84,7 @@ export const AnimatedTestimonial = ({
             initial="hidden"
             animate={controls}
           >
-            <h3 className="text-4xl font-bold dark:text-white">
+            <h3 className="text-4xl font-bold dark:text-white ">
               {testimonial.name}
             </h3>
             <p className="text-md text-gray-500 dark:text-neutral-500">

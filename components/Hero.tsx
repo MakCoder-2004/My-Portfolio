@@ -85,30 +85,33 @@ const Hero = () => {
               className="font-secondary text-center text-sm sm:text-base md:text-lg lg:text-xl max-w-4xl mx-auto my-6 sm:my-8"
             />
 
-            <div className="flex flex-row gap-3 justify-center items-center w-full">
-              {/* My Work Button */}
-              <a href="#MyWork" className="flex-1 max-w-[200px]">
-                <CustomButton
-                  title={"Show My Work"}
-                  position="left"
-                  icon={<LuSend />}
-                />
-              </a>
+            <div className="flex flex-col items-center gap-3 w-full">
+              {/* First row with two buttons */}
+              <div className="flex flex-row gap-3 justify-center items-center w-full">
+                {/* My Work Button */}
+                <a href="#MyWork" className="flex-1 max-w-[200px]">
+                  <CustomButton
+                    title={"Show My Work"}
+                    position="left"
+                    icon={<LuSend />}
+                  />
+                </a>
 
-              {/* GitHub Button */}
-              <a
-                href="https://github.com/MakCoder-2004"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 max-w-[200px]"
-              >
-                <CustomButton
-                  title={"GitHub"}
-                  position="left"
-                  icon={<FiGithub />}
-                  version="secondary"
-                />
-              </a>
+                {/* GitHub Button */}
+                <a
+                  href="https://github.com/MakCoder-2004"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 max-w-[200px]"
+                >
+                  <CustomButton
+                    title={"GitHub"}
+                    position="left"
+                    icon={<FiGithub />}
+                    version="secondary"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>

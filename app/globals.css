@@ -87,6 +87,22 @@
   }
 }
 
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-infinite-scroll {
+  display: flex;
+  animation: infinite-scroll 7s linear infinite;
+  will-change: transform; /* Optimizes GPU rendering */
+}
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}
 /* body base styles */
 body {
   background-color: var(--color-bg-main);

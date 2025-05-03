@@ -1,6 +1,7 @@
 import About from "@/components/About";
 import Hero from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
+import Tape from "@/components/Tape";
 import { NavbarItem } from "@/interfaces";
 import { cn } from "@/lib/utils";
 import React from "react";
@@ -26,7 +27,7 @@ const navItems: NavbarItem[] = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen relative overflow-hidden">
+    <main className="min-h-screen overflow-hidden">
       {/* Background grid */}
       <div>
         <div
@@ -47,6 +48,7 @@ export default function Home() {
       <Navbar navItems={navItems} />
       <Hero />
       <About />
+      <Tape />
     </main>
   );
 }
