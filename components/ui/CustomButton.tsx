@@ -29,7 +29,7 @@ const CustomButton = ({
   return version === "primary" ? (
     <div className=" max-w-xs sm:max-w-none">
       <button
-        className={`p-[3px] relative group cursor-pointer w-full inline-block w-full`}
+        className={`p-[3px] relative group cursor-pointer inline-block w-full`}
         onClick={handleClick}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-btn-secondary)] to-purple-500 rounded-lg transition-all duration-300 group-hover:opacity-80" />
