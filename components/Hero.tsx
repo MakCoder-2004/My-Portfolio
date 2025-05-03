@@ -8,7 +8,7 @@ import { LuSend } from "react-icons/lu";
 const Hero = () => {
   return (
     <section id="home">
-      <div className=" py-10 md:py-20 min-h-[80vh] flex items-center">
+      <div className="py-10 md:py-20 min-h-[80vh] flex items-center">
         {/* Spotlight effects*/}
         <div className="z-5 absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 flex">
@@ -67,7 +67,7 @@ const Hero = () => {
         </div>
 
         {/* Main content container */}
-        <div className="container mx-auto px-2 z-20">
+        <div className="container mx-auto px-4 md:px-2 z-20">
           <div className="text-center max-w-7xl mx-auto">
             <p className="uppercase font-secondary text-xs sm:text-sm md:text-lg text-secondary mb-4 sm:mb-6">
               Computer Science Student at Alexandria University
@@ -85,13 +85,12 @@ const Hero = () => {
               className="font-secondary text-center text-sm sm:text-base md:text-lg lg:text-xl max-w-4xl mx-auto my-6 sm:my-8"
             />
 
-            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center w-full">
+            <div className="flex flex-row gap-3 justify-center items-center w-full">
               {/* My Work Button */}
-              <a href="#MyWork" className="w-full sm:w-auto">
+              <a href="#MyWork" className="flex-1 max-w-[200px]">
                 <CustomButton
                   title={"Show My Work"}
                   position="left"
-                  otherClasses="w-full"
                   icon={<LuSend />}
                 />
               </a>
@@ -101,12 +100,11 @@ const Hero = () => {
                 href="https://github.com/MakCoder-2004"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto"
+                className="flex-1 max-w-[200px]"
               >
                 <CustomButton
                   title={"GitHub"}
                   position="left"
-                  otherClasses="w-full"
                   icon={<FiGithub />}
                   version="secondary"
                 />

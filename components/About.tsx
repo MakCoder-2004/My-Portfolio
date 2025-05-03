@@ -1,19 +1,32 @@
-import { EvervaultCard } from "@/components/ui/EvervaultCard";
+import { AnimatedTestimonial } from "./ui/animated-testimonials";
+import SectionTitle from "./ui/SectionTitle";
+
+interface ITestimonial {
+  description: string;
+  name: string;
+  designation: string;
+}
 
 export default function About() {
+  const testimonial: ITestimonial = {
+    description:
+      "Hi, I’m Makrious Ayman — a web developer and software engineer from Alexandria, Egypt, with a passion for solving problems and building smart, scalable solutions. As a Computer Science student specializing in Data Science at Alexandria University, I enjoy turning ideas into clean, efficient code — whether it’s crafting user-friendly websites or developing high-performance software. With experience in competitive programming and hands-on roles in coding and training programs, I’ve built a strong foundation in tackling complex challenges and delivering real-world results. Every project is a new opportunity to learn, improve, and push my limits — and I’m always ready to take it on.",
+    name: "Makrious Ayman",
+    designation: "Software Engineer/ Web Developer",
+  };
+
   return (
-    <section id="about" className="container mx-auto px-4 py-12">
+    <section id="about" className="container mx-auto px-4 py-24">
       <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-        <div className="w-64 h-64 md:w-80 md:h-80">
-          <EvervaultCard imageUrl="/path-to-your-profile-picture.jpg" />
-        </div>
-        
-        <div className="max-w-4xl">
-          <h2 className="text-3xl font-bold mb-4">About Me</h2>
-          <p className="text-lg mb-4">
-            Hi, I&apos;m Makrious Ayman. I&apos;m a [your profession] with expertise in...
-          </p>
-          {/* Add more about yourself here */}
+        <SectionTitle
+          title="About Me"
+          subtitle="Your story is the greatest legacy you’ll leave behind—make it worth telling."
+        />
+      </div>
+
+      <div>
+        <div className="py-4">
+          <AnimatedTestimonial testimonial={testimonial} />
         </div>
       </div>
     </section>
