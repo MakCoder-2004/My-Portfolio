@@ -47,13 +47,13 @@ const Contact = () => {
               className="relative group flex items-center justify-center gap-2 w-full max-w-[220px] px-6 py-3 font-medium rounded-lg overflow-hidden transition-all duration-300"
             >
               {/* Gradient background */}
-              <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-[#818cf8] group-hover:from-purple-600 group-hover:to-[#818cf8] transition duration-300"></span>
+              <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-[#818cf8] group-hover:from-purple-600 group-hover:to-[#818cf8] transition duration-300 flex items-center justify-center"></span>
 
               {/* Button content */}
-              <span className="relative z-10 text-white text-sm md:text-base font-semibold tracking-wide">
+              <span className="relative z-10 text-white text-sm md:text-base font-primary">
                 Send Message
               </span>
-              <LuSend className="relative z-10 text-white text-lg transition-transform duration-300 group-hover:translate-x-1" />
+              <LuSend className="size-4 relative z-10 text-white text-lg transition-transform duration-300 group-hover:translate-x-1" />
 
             </button>
           </div>
