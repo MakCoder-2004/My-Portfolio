@@ -1,5 +1,5 @@
 "use client";
-import { AnimatedTestimonial } from "./ui/animated-testimonials";
+import { AboutTestimonial } from "./ui/AboutTestimonials";
 import SectionTitle from "./ui/SectionTitle";
 
 interface ITestimonial {
@@ -26,7 +26,7 @@ export default function About() {
         </div>
 
         <div>
-          <AnimatedTestimonial testimonial={testimonial} />
+          <AboutTestimonial testimonial={testimonial} />
         </div>
       </section>
   );

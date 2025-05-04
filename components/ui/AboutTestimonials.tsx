@@ -10,7 +10,7 @@ type Testimonial = {
   designation: string;
 };
 
-export const AnimatedTestimonial = ({
+export const AboutTestimonial = ({
   testimonial,
   otherClasses,
 }: {

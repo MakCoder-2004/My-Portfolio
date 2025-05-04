@@ -3,7 +3,7 @@ import {
   IconUser, 
   IconMail, 
 } from "@tabler/icons-react";
-import { FloatingDock } from "./ui/FloatingDock";
+import { Dock } from "./ui/FloatingDock";
 import { GrTechnology } from "react-icons/gr";
 import { PiProjectorScreenFill } from "react-icons/pi";
 
@@ -37,10 +37,9 @@ export function Navbar() {
   ];
 
   return (
-    <FloatingDock 
+    <Dock 
       items={dockItems}
-      desktopClassName="fixed "
-      mobileClassName="fixed right-4"
+      ClassName="fixed right-4"
     />
   );
 }
