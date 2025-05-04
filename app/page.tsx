@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 import Tape from "@/components/Tape";
@@ -53,6 +54,7 @@ export default function Home() {
         <About />
         <Tape />
         <Contact />
+        <Footer />
       </CustomScrollbar>
     </main>
   );

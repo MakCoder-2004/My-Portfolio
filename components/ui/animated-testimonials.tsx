@@ -32,7 +32,7 @@ export const AnimatedTestimonial = ({
   return (
     <div
       ref={ref}
-      className={`mx-auto px-4 pb-6 font-sans antialiased md:max-w-6xl md:px-8 lg:px-8 ${otherClasses}`}
+      className={`mx-auto px-4 py-6 font-sans antialiased md:max-w-6xl md:px-8 lg:px-8 ${otherClasses}`}
     >
       <div className="relative grid grid-cols-1 gap-10 md:grid-cols-2 items-center">
         <div className="flex justify-center sm:justify-center md:justify-center lg:justify-start">

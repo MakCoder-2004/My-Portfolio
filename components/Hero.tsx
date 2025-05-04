@@ -8,7 +8,7 @@ import { LuSend } from "react-icons/lu";
 const Hero = () => {
   return (
     <section id="home">
-      <div className="py-10 md:py-20 min-h-[80vh] flex items-center">
+      <div className="py-20 lg:py-30 min-h-[80vh] flex items-center">
         {/* Spotlight effects*/}
         <div className="z-5 absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 flex">

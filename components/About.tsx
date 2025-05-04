@@ -17,7 +17,6 @@ export default function About() {
   };
 
   return (
-    <div className="pt-20 ">
       <section id="about" className="container mx-auto px-4 py-16">
         <div className="flex flex-col md:flex-row items-center justify-center">
           <SectionTitle
@@ -30,6 +29,5 @@ export default function About() {
           <AnimatedTestimonial testimonial={testimonial} />
         </div>
       </section>
-    </div>
   );
 }

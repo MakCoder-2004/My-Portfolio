@@ -7,7 +7,7 @@ interface PrimaryLipUpButtonProps {
   handleClick?: () => void;
   otherClasses?: string;
   version?: "primary" | "secondary";
-  size?: "sm" | "md" | "lg"; // Added size prop for better control
+  size?: "sm" | "md" | "lg"; 
 }
 
 const CustomButton = ({
@@ -17,9 +17,9 @@ const CustomButton = ({
   handleClick,
   otherClasses = "",
   version = "primary",
-  size = "md", // Default to medium size
+  size = "md", 
 }: PrimaryLipUpButtonProps) => {
-  // Size classes for different button sizes
+  
   const sizeClasses = {
     sm: "px-3 py-1 text-sm",
     md: "px-5 py-2 text-base",
@@ -29,7 +29,7 @@ const CustomButton = ({
   return version === "primary" ? (
     <div className=" max-w-xs sm:max-w-none">
       <button
-        className={`p-[3px] relative group cursor-pointer inline-block w-full`}
+        className={`p-[3px] relative group cursor-pointer inline-block`}
         onClick={handleClick}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-btn-secondary)] to-purple-500 rounded-lg transition-all duration-300 group-hover:opacity-80" />
