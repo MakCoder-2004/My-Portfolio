@@ -11,7 +11,7 @@ interface ITestimonial {
 export default function About() {
   const testimonial: ITestimonial = {
     description:
-      "Hi, I'm Makrious Ayman — a web developer and software engineer from Alexandria, Egypt, with a passion for solving problems and building smart, scalable solutions. As a Computer Science student specializing in Data Science at Alexandria University, I enjoy turning ideas into clean, efficient code — whether it's crafting user-friendly websites or developing high-performance software. With experience in competitive programming and hands-on roles in coding and training programs, I've built a strong foundation in tackling complex challenges and delivering real-world results. Every project is a new opportunity to learn, improve, and push my limits — and I'm always ready to take it on.",
+      "Hi, I'm Makrious Ayman. A web developer and software engineer from Alexandria, Egypt, with a passion for solving problems and building smart, scalable solutions. As a Computer Science student specializing in Data Science at Alexandria University, I enjoy turning ideas into clean, efficient code. Whether it's crafting user-friendly websites or developing high-performance software. With experience in competitive programming and hands-on roles in coding and training programs, I've built a strong foundation in tackling complex challenges and delivering real-world results. Every project is a new opportunity to learn, improve, and push my limits. I'm always ready to take it on.",
     name: "Makrious Ayman",
     designation: "Software Engineer/ Web Developer",
   };

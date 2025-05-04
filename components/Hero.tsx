@@ -91,7 +91,7 @@ const Hero = () => {
                 {/* My Work Button */}
                 <a href="#MyWork" className="flex-1 max-w-[200px]">
                   <CustomButton
-                    title={"Show My Work"}
+                    title={"See My Work"}
                     position="left"
                     icon={<FaCode />}
                   />
