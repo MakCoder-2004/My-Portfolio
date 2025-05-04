@@ -5,28 +5,8 @@ import Hero from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 import Tape from "@/components/Tape";
 import CustomScrollbar from "@/components/ui/CustomScrollbar";
-import { NavbarItem } from "@/interfaces";
 import { cn } from "@/lib/utils";
 import React from "react";
-
-const navItems: NavbarItem[] = [
-  {
-    name: "Home",
-    link: "/",
-  },
-  {
-    name: "About",
-    link: "/about",
-  },
-  {
-    name: "Projects",
-    link: "/projects",
-  },
-  {
-    name: "Contact",
-    link: "/contact",
-  },
-];
 
 export default function Home() {
   return (
@@ -49,13 +29,13 @@ export default function Home() {
         </div>
 
         {/* Content container */}
-        <Navbar navItems={navItems} />
         <Hero />
         <About />
         <Tape />
         <Contact />
         <Footer />
       </CustomScrollbar>
+      <Navbar />
     </main>
   );
 }

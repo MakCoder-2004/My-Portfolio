@@ -20,7 +20,7 @@ const Footer = () => {
       <div>
         <div className="border-t border-white/15 py-6 text-sm flex flex-col md:flex-row md:justify-between items-center gap-8 ">
           <div className="text-white/40 px-8">
-            &copy; 2025. All rights reserved.
+            &copy; {new Date().getFullYear()}. All rights reserved.
           </div>
           <nav className="flex flex-col md:flex-row items-center gap-8 px-8 text-white/40">
             {footerLinks.map((link) => (

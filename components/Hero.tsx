@@ -3,7 +3,7 @@ import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { FiGithub } from "react-icons/fi";
 import CustomButton from "./ui/CustomButton";
-import { LuSend } from "react-icons/lu";
+import { FaCode } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -93,7 +93,7 @@ const Hero = () => {
                   <CustomButton
                     title={"Show My Work"}
                     position="left"
-                    icon={<LuSend />}
+                    icon={<FaCode />}
                   />
                 </a>
 

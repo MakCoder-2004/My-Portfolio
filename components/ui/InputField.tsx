@@ -83,7 +83,7 @@ const InputField: React.FC<InputFieldProps> = ({
               border-2 border-purple-500 rounded-lg outline-none transition-all duration-200 ease-in-out
               shadow-[0_4px_20px_-5px_rgba(168,85,247,0.3)] text-white resize-y
               hover:shadow-[0_8px_30px_-5px_rgba(168,85,247,0.4)] hover:-translate-y-0.5
-              focus:bg-white/ 5 focus:text-white focus:border-purple-500 
+              focus:bg-white/5 focus:text-white focus:border-purple-500 
               focus:shadow-[0_8px_40px_-5px_rgba(168,85,247,0.6)] focus:animate-shake
               placeholder:text-purple-200/70 focus:placeholder:text-purple-100 ${className}
               ${value ? "tracking-[0.5px]" : ""}
@@ -107,7 +107,7 @@ const InputField: React.FC<InputFieldProps> = ({
           <input
             ref={inputRef}
             className={`
-              w-full h-[60px] px-4 py-3 text-md  bg-main backdrop-blur-sm
+              w-full h-[60px] px-4 py-3 text-md bg-main backdrop-blur-sm
               border-2 border-purple-500 rounded-lg outline-none transition-all duration-300 ease-in-out
               shadow-[0_4px_20px_-5px_rgba(168,85,247,0.3)] text-white
               hover:shadow-[0_8px_30px_-5px_rgba(168,85,247,0.4)] hover:-translate-y-0.5
