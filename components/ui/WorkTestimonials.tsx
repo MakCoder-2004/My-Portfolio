@@ -39,8 +39,8 @@ export const WorkTestimonials = ({
   };
 
   return (
-    <div className="mx-auto px-4 py-6 font-sans antialiased w-full max-w-4xl">
-      <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 items-center">
+    <div className="mx-auto px-4 py-8 font-sans antialiased w-full max-w-5xl">
+      <div className="sm:px-18 grid grid-cols-1 gap-16 lg:grid-cols-2 items-center">
         <div className="flex justify-center lg:justify-end">
           <div className="relative h-96 w-full max-w-4xl">
             <AnimatePresence>
@@ -88,7 +88,7 @@ export const WorkTestimonials = ({
             </AnimatePresence>
           </div>
         </div>
-        <div className="flex flex-col justify-between py-4 max-w-xl lg:max-w-4xl px-8">
+        <div className="flex flex-col justify-between py-4 max-w-2xl lg:max-w-4xl px-2">
           <motion.div
             key={active}
             initial={{
@@ -117,13 +117,12 @@ export const WorkTestimonials = ({
               href={testimonials[active].link}
               className="flex items-center gap-2 py-2 text-lg text-gray-500 dark:text-neutral-500"
             >
-              View Project - GitHub
+              View on GitHub
               <span>
                 <LuArrowUpRight />
               </span>
             </a>
-            <motion.p className="mt-8 text-xl text-gray-500 dark:text-neutral-300">
-              {" "}
+            <motion.p className="mt-4 text-xl text-gray-500 dark:text-neutral-300">
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
@@ -149,7 +148,7 @@ export const WorkTestimonials = ({
               ))}
             </motion.p>
           </motion.div>
-          <div className="flex gap-4 pt-12 md:pt-4">
+          <div className="flex gap-4 pt-8 md:pt-4">
             <button
               onClick={handlePrev}
               className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"

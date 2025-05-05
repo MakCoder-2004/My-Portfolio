@@ -4,3 +4,9 @@ export type Testimonial = {
   image: string;
   link: string;
 };
+
+export type skills = {
+  name: string;
+  description: string;
+  icon: React.ReactNode;
+};

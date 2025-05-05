@@ -17,7 +17,7 @@ export default function About() {
   };
 
   return (
-      <section id="about" className="container mx-auto px-4 py-16">
+      <section id="about" className="container mx-auto px-4 py-20">
         <div className="flex flex-col md:flex-row items-center justify-center">
           <SectionTitle
             title="About Me"

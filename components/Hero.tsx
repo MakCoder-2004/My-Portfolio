@@ -8,7 +8,7 @@ import { FaCode } from "react-icons/fa";
 const Hero = () => {
   return (
     <section id="home">
-      <div className="py-20 lg:py-30 min-h-[80vh] flex items-center">
+      <div className="py-20 lg:py-30 flex items-center">
         {/* Spotlight effects*/}
         <div className="z-5 absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 flex">
@@ -89,7 +89,7 @@ const Hero = () => {
               {/* First row with two buttons */}
               <div className="flex flex-row gap-3 justify-center items-center w-full">
                 {/* My Work Button */}
-                <a href="#MyWork" className="flex-1 max-w-[200px]">
+                <a href="#myWork" className="flex-1 max-w-[200px]">
                   <CustomButton
                     title={"See My Work"}
                     position="left"

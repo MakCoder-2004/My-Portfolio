@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="pb-16 pt-20 mx-auto px-4 flex flex-col items-center justify-center"
+      className="py-20 mx-auto px-4 flex flex-col items-center justify-center"
     >
       <div className="flex flex-col md:flex-row items-center justify-center">
         <SectionTitle

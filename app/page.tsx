@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import CustomScrollbar from "@/components/ui/CustomScrollbar";
 import React from "react";
 import MyWork from "@/components/MyWork";
+import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Hero />
         <About />
         <Tape />
+        <Skills />
         <MyWork />
         <Contact />
         <Footer />

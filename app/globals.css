@@ -169,3 +169,34 @@ body {
     (var(--scrollbar-size) - var(--scrollbar-thumb-width)) / 2
   ) !important;
 }
+/* Skills Animation section */
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(calc(-50%));
+  }
+}
+
+@keyframes scroll-reverse {
+  0% {
+    transform: translateY(calc(-50%));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 50s linear infinite; /* Slowed down significantly */
+}
+
+.animate-scroll-reverse {
+  animation: scroll-reverse 50s linear infinite; /* Slowed down significantly */
+}
+
+.animate-scroll:hover,
+.animate-scroll-reverse:hover {
+  animation-play-state: paused;
+}

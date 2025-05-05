@@ -1,9 +1,12 @@
+import { ReactNode } from "react";
+
 interface SectionTitleProps {
-  title: string;
+  title: string | ReactNode;
   subtitle: string;
+  otherClasses?: string;
 }
 
-const SectionTitle = ({ title, subtitle }: SectionTitleProps) => {
+const SectionTitle = ({ title, subtitle, otherClasses }: SectionTitleProps) => {
   return (
     <div className="relative mb-16">
       <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
@@ -19,7 +22,9 @@ const SectionTitle = ({ title, subtitle }: SectionTitleProps) => {
           {subtitle}
         </p>
         {/* Animated underline */}
-        <div className="mt-2 h-0.5 bg-gradient-to-r from-transparent via-purple-500 to-transparent w-1/2 mx-auto opacity-70"></div>
+        <div
+          className={`mt-2 h-0.5 bg-gradient-to-r from-transparent via-purple-500 to-transparent w-1/2 mx-auto opacity-70 ${otherClasses}`}
+        ></div>
       </div>
     </div>
   );
