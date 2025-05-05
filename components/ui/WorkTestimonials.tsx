@@ -39,8 +39,8 @@ export const WorkTestimonials = ({
   };
 
   return (
-    <div className="mx-auto px-4 py-8 font-sans antialiased w-full max-w-5xl">
-      <div className="sm:px-18 grid grid-cols-1 gap-16 lg:grid-cols-2 items-center">
+    <div className="mx-auto px-4 py-8 font-sans antialiased w-full max-w-screen">
+      <div className="sm:px-18 grid grid-cols-1 gap-22 lg:grid-cols-2 items-center">
         <div className="flex justify-center lg:justify-end">
           <div className="relative h-96 w-full max-w-4xl">
             <AnimatePresence>

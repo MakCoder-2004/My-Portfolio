@@ -25,7 +25,7 @@ const MyWork = () => {
           </div>
 
           <div className="flex items-center justify-center">
-            <div className="my-2 max-w-5xl">
+            <div className="my-2 max-w-7xl">
               <TabsContent value="Projects">
                 {/*  projects */}
                 <WorkTestimonials testimonials={Projectstestimonials} />

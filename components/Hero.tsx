@@ -8,7 +8,7 @@ import { FaCode } from "react-icons/fa";
 const Hero = () => {
   return (
     <section id="home">
-      <div className="py-20 lg:py-30 flex items-center">
+      <div className="py-20 lg:pb-20 lg:pt-28 flex items-center">
         {/* Spotlight effects*/}
         <div className="z-5 absolute inset-0 overflow-hidden">
           <div className="absolute inset-0 flex">
