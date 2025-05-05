@@ -5,6 +5,10 @@
 
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Custom Theme */
 :root {
   /* COLORS */
