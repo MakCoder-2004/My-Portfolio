@@ -2,7 +2,7 @@
 
 import React from "react";
 import SectionTitle from "./ui/SectionTitle";
-import { FaNodeJs, FaReact, FaGitAlt, FaJava, FaPython } from "react-icons/fa";
+import { FaReact, FaGitAlt, FaJava, FaPython } from "react-icons/fa";
 import {
   SiTypescript,
   SiNextdotjs,
@@ -11,9 +11,6 @@ import {
   SiCss3,
   SiHtml5,
   SiJavascript,
-  SiExpress,
-  SiMongodb,
-  SiPostgresql,
 } from "react-icons/si";
 import { TbBrandCpp } from "react-icons/tb";
 
@@ -24,11 +21,6 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  {
-    name: "Node.js",
-    icon: <FaNodeJs className="text-green-500" size={24} />,
-    description: "JavaScript runtime for server-side development.",
-  },
   {
     name: "Tailwind CSS",
     icon: <SiTailwindcss className="text-cyan-400" size={24} />,
@@ -93,21 +85,6 @@ const skills: Skill[] = [
     name: "Git",
     icon: <FaGitAlt className="text-orange-600" size={24} />,
     description: "Version control system for collaboration.",
-  },
-  {
-    name: "MongoDB",
-    icon: <SiMongodb className="text-green-600" size={24} />,
-    description: "NoSQL database for modern applications.",
-  },
-  {
-    name: "PostgreSQL",
-    icon: <SiPostgresql className="text-blue-800" size={24} />,
-    description: "Powerful open-source relational database.",
-  },
-  {
-    name: "Express",
-    icon: <SiExpress className="text-gray-400" size={24} />,
-    description: "Minimalist web framework for Node.js.",
   },
   {
     name: "SQL",

@@ -23,7 +23,8 @@ const Contact: React.FC = () => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -43,13 +44,14 @@ const Contact: React.FC = () => {
         throw new Error(data.error || "Failed to send message");
       }
 
-      setStatus(data.message);
+      setStatus(data.message || "Message sent successfully!");
       setFormData({ email: "", title: "", message: "" });
     } catch (error) {
       console.error("Submission error:", error);
       setStatus(
-        error.message ||
-          "Failed to send message. Please check your email address and try again."
+        error instanceof Error
+          ? error.message
+          : "Failed to send message. Please try again later."
       );
     }
   };
@@ -100,18 +102,27 @@ const Contact: React.FC = () => {
         <div className="flex justify-center w-full mt-4">
           <button
             type="submit"
-            className="relative cursor-pointer group flex items-center justify-center gap-2 w-full max-w-[220px] px-6 py-3 font-medium rounded-lg overflow-hidden transition-all duration-300"
+            disabled={status === "Sending..."}
+            className="relative cursor-pointer group flex items-center justify-center gap-2 w-full max-w-[220px] px-6 py-3 font-medium rounded-lg overflow-hidden transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 group-hover:from-pink-500 group-hover:to-purple-500 transition duration-300" />
             <span className="relative z-10 text-white text-sm font-primary transition-transform duration-300 group-hover:translate-x-1 font-medium uppercase">
-              Send Message
+              {status === "Sending..." ? "Sending..." : "Send Message"}
             </span>
-            <LuSend className="size-4 relative z-10 text-white text-lg transition-transform duration-300 group-hover:translate-x-1" />
+            {status !== "Sending..." && (
+              <LuSend className="size-4 relative z-10 text-white text-lg transition-transform duration-300 group-hover:translate-x-1" />
+            )}
           </button>
         </div>
 
-        {status && (
-          <p className="text-center text-sm mt-2 text-gray-400">{status}</p>
+        {status && status !== "Sending..." && (
+          <p
+            className={`text-center text-sm mt-2 ${
+              status.includes("Failed") ? "text-red-400" : "text-green-400"
+            }`}
+          >
+            {status}
+          </p>
         )}
       </form>
     </section>
