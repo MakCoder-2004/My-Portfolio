@@ -29,11 +29,15 @@ export default async function handler(
     });
 
     // Verify connection
-    await transporter.verify((error) => {
-      if (error) {
-        console.error("Server verification error:", error);
-        throw new Error("SMTP connection failed");
-      }
+    await new Promise((resolve, reject) => {
+      transporter.verify((error) => {
+        if (error) {
+          console.error("Server verification error:", error);
+          reject(new Error("SMTP connection failed"));
+        } else {
+          resolve(null);
+        }
+      });
     });
 
     const mailOptions = {
@@ -56,8 +60,12 @@ export default async function handler(
 
     await transporter.sendMail(mailOptions);
     return res.status(200).json({ message: "Message sent successfully!" });
-  } catch (error) {
-    console.error("Full error details:", error);
+  } catch (err) {
+    console.error("Full error details:", err);
+
+    // Proper error typing
+    const error = err instanceof Error ? err : new Error(String(err));
+
     return res.status(500).json({
       error: error.message || "Failed to send message",
       details: process.env.NODE_ENV === "development" ? error.stack : undefined,
