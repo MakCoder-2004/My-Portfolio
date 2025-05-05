@@ -1,9 +1,59 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import InputField from "./ui/InputField";
 import SectionTitle from "./ui/SectionTitle";
 import { LuSend } from "react-icons/lu";
 
-const Contact = () => {
+interface FormData {
+  email: string;
+  title: string;
+  message: string;
+}
+
+const Contact: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
+    email: "",
+    title: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState<string | null>(null);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      setStatus(data.message);
+      setFormData({ email: "", title: "", message: "" });
+    } catch (error) {
+      console.error("Submission error:", error);
+      setStatus(
+        error.message ||
+          "Failed to send message. Please check your email address and try again."
+      );
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -16,46 +66,54 @@ const Contact = () => {
         />
       </div>
 
-      <div className="flex flex-col gap-6 w-full max-w-2xl mx-auto mt-8 px-4">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-6 w-full max-w-2xl mx-auto mt-8 px-4"
+      >
         <div className="flex flex-col md:flex-row gap-6 w-full">
           <InputField
             placeholder="Email Address"
             type="email"
             name="email"
+            value={formData.email}
+            onChange={handleChange}
             className="w-full md:flex-1"
           />
           <InputField
             placeholder="Title"
             type="text"
             name="title"
+            value={formData.title}
+            onChange={handleChange}
             className="w-full md:flex-1"
           />
         </div>
         <InputField
           placeholder="Message"
-          type="text"
           name="message"
-          className="w-full min-h-[200px]"
+          value={formData.message}
+          onChange={handleChange}
           inputType="textarea"
+          className="w-full min-h-[200px]"
         />
 
-        {/* Custom Send Button */}
         <div className="flex justify-center w-full mt-4">
           <button
             type="submit"
             className="relative cursor-pointer group flex items-center justify-center gap-2 w-full max-w-[220px] px-6 py-3 font-medium rounded-lg overflow-hidden transition-all duration-300"
           >
-            {/* Gradient background */}
-            <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 group-hover:from-pink-500 group-hover:to-purple-500 transition duration-300 flex items-center justify-center"></span>
-
-            {/* Button content */}
+            <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 group-hover:from-pink-500 group-hover:to-purple-500 transition duration-300" />
             <span className="relative z-10 text-white text-sm font-primary transition-transform duration-300 group-hover:translate-x-1 font-medium uppercase">
               Send Message
             </span>
             <LuSend className="size-4 relative z-10 text-white text-lg transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         </div>
-      </div>
+
+        {status && (
+          <p className="text-center text-sm mt-2 text-gray-400">{status}</p>
+        )}
+      </form>
     </section>
   );
 };

@@ -28,13 +28,8 @@ const InputField: React.FC<InputFieldProps> = ({
   const [isFocused, setIsFocused] = useState(false);
 
   // Handle focus/blur events
-  const handleFocus = () => {
-    setIsFocused(true);
-  };
-
-  const handleBlur = () => {
-    setIsFocused(false);
-  };
+  const handleFocus = () => setIsFocused(true);
+  const handleBlur = () => setIsFocused(false);
 
   // Auto-resize textarea based on content (debounced)
   useEffect(() => {
@@ -52,9 +47,7 @@ const InputField: React.FC<InputFieldProps> = ({
       textareaRef.current!.style.height = `${newHeight}px`;
     };
 
-    // Debounce the resize to improve performance
     const timeoutId = setTimeout(resizeTextarea, 50);
-
     return () => clearTimeout(timeoutId);
   }, [value, inputType, className]);
 
@@ -74,6 +67,10 @@ const InputField: React.FC<InputFieldProps> = ({
           `}
           name={name}
           placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
         />
       ) : (
         <div className="relative">
