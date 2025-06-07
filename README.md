@@ -64,7 +64,7 @@ yarn dev
 
 This Next.js application can be deployed to any hosting service that supports Node.js. The easiest way is to use **Vercel**:
 
-* [Deploy with Vercel](https://makrious-ayman.vercel.app/)
+* [Deployed with Vercel](https://makrious-ayman.vercel.app/)
 
 ---
 
